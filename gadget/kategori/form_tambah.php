@@ -12,6 +12,7 @@
 <body style="background-color:#d1e6d4">
     <?php
     include_once("../navbar.php");
+    include("../ceklogin.php");
     ?>
 
     <div class="container">
