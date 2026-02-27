@@ -24,16 +24,7 @@
                     </div>
                     <div class="card-body">
                         <form action="proses_tambah.php" method="POST" enctype="multipart/form-data">
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">idk</label>
-                                <input name="idk" type="text" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Idm</label>
-                                <input name="idm" type="text" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
-                            </div>
+                            <!-- idk dan idm dihapus, cukup kategori dan merk relasi -->
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Produk</label>
                                 <input name="nama_produk" type="text" class="form-control" id="exampleInputEmail1"
@@ -64,51 +55,37 @@
                                     <label class="form-check-label" for="inlineRadio2">Perempuan</label>
                                 </div>
                             </div> -->
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">id dan kategori</label>
-                                <select class="form-control" name="kategori" id="">
-                                    <option value="">-Pilih Kategori-</option>
-                                    <!-- <option value="IPA">IPA</option> -->
-                                   <?php 
-                                        //kode untuk looping datat jurusan
-                                        include_once('../koneksi.php');
-                                        $qry_kategori = "SELECT * FROM kategori";
-                                        $data_kategori = mysqli_query($koneksi,$qry_kategori);
-                                        foreach($data_kategori as $item_kategori){
-                                    ?>
-                                    <option value="<?=$item_kategori['id']?>"><?=$item_kategori['kode_k']?>  -  <?=$item_kategori['nama_kategori']?></option>
-
-                                    <!-- <option value="<?=$item_pendaftaran['id']?>"><?=$item_pendaftaran['gelombang']?></option> -->
-                                    <?php
-                                        //penutup kode looping jurusan
-                                        }
-                                    ?>
-                                </select>
-                            </div> 
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Merk</label>
-                                <select class="form-control" name="merk" id="">
-                                    <option value="">-Pilih Merk-</option>
-                                    <!-- <option value="IPA">IPA</option> -->
-                                   <?php 
-                                        //kode untuk looping datat jurusan
-                                        include_once('../koneksi.php');
-                                        $qry_merk = "SELECT * FROM merk";
-                                        $data_merk = mysqli_query($koneksi,$qry_merk);
-                                        foreach($data_merk as $item_merk){
-                                    ?>
-                                    <option value="<?=$item_merk['id']?>"><?=$item_merk['kode_m']?> - <?=$item_merk['nama_merk']?></option>
-                                    <?php
-                                        //penutup kode looping jurusan
-                                        }
-                                    ?>
-                                </select>
-
-                                <!-- <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Pendaftaran</label>
-                                <input name="alamat" type="text" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
-                            </div> -->
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="kategori" class="form-label">Kategori</label>
+                                    <select class="form-control" name="kategori" id="kategori">
+                                        <option value="">-Pilih Kategori-</option>
+                                        <?php 
+                                            include_once('../koneksi.php');
+                                            $qry_kategori = "SELECT * FROM kategori";
+                                            $data_kategori = mysqli_query($koneksi,$qry_kategori);
+                                            foreach($data_kategori as $item_kategori){
+                                        ?>
+                                        <option value="<?=$item_kategori['id']?>"><?=$item_kategori['kode_k']?> - <?=$item_kategori['nama_kategori']?></option>
+                                        <?php }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label for="merk" class="form-label">Merk</label>
+                                    <select class="form-control" name="merk" id="merk">
+                                        <option value="">-Pilih Merk-</option>
+                                        <?php 
+                                            include_once('../koneksi.php');
+                                            $qry_merk = "SELECT * FROM merk";
+                                            $data_merk = mysqli_query($koneksi,$qry_merk);
+                                            foreach($data_merk as $item_merk){
+                                        ?>
+                                        <option value="<?=$item_merk['id']?>"><?=$item_merk['kode_m']?> - <?=$item_merk['nama_merk']?></option>
+                                        <?php }
+                                        ?>
+                                    </select>
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Foto</label>
