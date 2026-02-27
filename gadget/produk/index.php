@@ -84,22 +84,22 @@
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                             <div class="modal-header bg-warning">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Data Detail <?=$data['nama']?></h1>
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Data Detail <?=$data['nama_produk']?></h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
                                                 <table class="table">
                                                 <tbody>
                                                   <tr>
-                                                    <td colspan="2"><img src="../foto_produk/<?= $data['foto'] ?>" alt="" width="100px"></td>
+                                                    <td colspan="2"><img src="../fotoproduk/<?= $data['foto'] ?>" alt="" width="100px"></td>
                                                   </tr>
                                                     <tr>
-                                                        <td>id_kategori</td>
-                                                        <th scope="row"><?=$data['idk']?></th>
+                                                        <td>Nama Kategori</td>
+                                                        <th scope="row"><?=$data['nama_kategori']?></th>
                                                     </tr>
                                                     <tr>
-                                                        <td>id_merk</td>
-                                                        <th scope="row"><?=$data['idm']?></th>
+                                                        <td>Nama Merk</td>
+                                                        <th scope="row"><?=$data['nama_merk']?></th>
                                                     </tr>
                                                     <tr>
                                                         <td>nama_produk</td>
