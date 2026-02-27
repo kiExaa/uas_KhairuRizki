@@ -1,6 +1,6 @@
 <?php
 include_once("../koneksi.php");
-$idedit = $_GET['idp'];
+$idedit = $_GET['id'];
 $qry = "SELECT * FROM produk WHERE id='$idedit'";
 $edit = mysqli_query($koneksi,$qry);
 $data = mysqli_fetch_array($edit);
@@ -118,14 +118,9 @@ $data = mysqli_fetch_array($edit);
                                 <input name="alamat" type="text" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
                             </div> -->
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Foto</label>
-                                <input name="foto" accept="image/*" type="file" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
+                            
+                            
+                        
                     </div>
                             </div>
                             <div class="mb-3">
