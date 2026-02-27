@@ -9,11 +9,12 @@ if(isset($_POST['tombol'])){
 include("koneksi.php");
 
 #. mengambil value data input
-$username = $_POST['username'];
+
+$username = $_POST['username']; // Change from 'username' to 'nama'
 $pass = md5($_POST['password']);
 
 #3. cek apakah email dan password ada di database?
-$qry = "SELECT * FROM users WHERE username='$username' AND pass='$pass'";
+$qry = "SELECT * FROM users WHERE nama='$username' AND pass='$pass'";
 $result = mysqli_query($koneksi,$qry);
 $cek_login = mysqli_num_rows($result);
 
@@ -43,13 +44,15 @@ if($cek_login == 0){
     //login berhasil
     $pesan = "login berhasil";
     // session & cookie
-    if(isset($_POST['cek']) == "yes"){
-        setcookie("coo_username",$username,time()+(3600*24*30),"/");
-        header("location:index.php");
+    if(isset($_POST['cek']) && $_POST['cek'] == "yes"){
+        setcookie("coo_username", $username, time()+(3600*24*30), "/");
+        $_SESSION['ses_username'] = $username;
+        header("Location: index.php");
+        exit();
     }else{
         $_SESSION['ses_username'] = $username;
-        header('location:index.php');
-        // header('refresh:2,url;index.php');
+        header('Location: index.php');
+        exit();
     }
 }
 }
