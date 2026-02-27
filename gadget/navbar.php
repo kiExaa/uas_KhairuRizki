@@ -17,7 +17,7 @@
                         <a class="nav-link active" aria-current="page" href="http://localhost/uas_KhairuRizki/gadget/merk/">merk</a>
                     </li>
                     <li class="nav-item">
-                        <!-- <a class="nav-link active" aria-current="page" href="http://localhost/uas_KhairulRizki/gadget">Dosen</a> -->
+                        <a class="nav-link active" aria-current="page" href="http://localhost/uas_KhairuRizki/gadget/logout/">Logout</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
